@@ -1,0 +1,400 @@
+---
+---
+
+// Breakpoints: 850px,
+
+// Variables
+$color_blue-dark: #1f204f;
+$color_gray-light: lighten($color_blue-dark, 50%);
+$color_blue-light: #39f;
+$color_red-theme: #df2025;
+$color_red-theme-light: lighten($color_red-theme, 40%);
+$margin_theme: 4px;
+$height_nav-main: 83px;
+
+$font-family_serif: 'Droid Serif', Georgia, serif;
+$font-family_sans-serif: 'Expletus Sans', Helvetica, sans-serif;
+$font-size_small: 18px;
+$font-size_medium: 24px;
+$font-size_large: 36px;
+$font-size_extra-large: 48px;
+
+$speed_quick:   250ms;
+$speed_relaxed: 400ms;
+
+$transition_link: border-color $speed_quick ease;
+
+$border-width_pill: 4px;
+$box-shadow_pill: 6px 6px 0 0 $color_blue-dark;
+
+$text-shadow_display: 2px 2px 0 $color_blue-dark;
+
+// All pages
+html {
+  font-family: $font-family_sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  &.home {
+    background-color: $color_red-theme;
+  }
+}
+
+nav.nav_main {
+  display: block;
+  padding: 15px 20px;
+  border-bottom: 4px solid $color_blue-dark;
+  font-size: $font_size-medium;
+  height: $height_nav-main;
+  background: $color_red-theme;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  .logo {
+    margin: -5px;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+
+    &:hover,
+    &:focus {
+      border: 4px solid rgba(255,255,255,.5);
+      margin: -9px;
+      height: 68px;
+      width: 68px;
+    }
+  }
+
+  .right {
+    float: right;
+  }
+
+  .primary {
+    a {
+      margin-right: 50px;
+    }
+  }
+
+  .secondary {
+    a {
+      margin-right: 20px;
+    }
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    margin-top: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 4px solid rgba(255,255,255,.5);
+    }
+
+    &:active,
+    &.active {
+      border-bottom: 4px solid #fff;
+    }
+  }
+}
+
+a {
+  font-family: $font-family_sans-serif;
+  text-decoration: none;
+  color: $color_blue-light;
+  border-color: rgba(255,255,255,0); // added because transition on hover was transitioning from blue to gray
+  transition: $transition_link;
+
+  &:hover,
+  &:focus {
+    border-bottom: 4px solid $color_blue-light;
+  }
+
+  &:active,
+  &.active {
+    border-bottom: 4px solid $color_blue-dark;
+  }
+}
+
+.container_main {
+  position: absolute;
+  top: $height_nav-main;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.container_home {
+
+  color: #fff;
+
+  // Home page only
+  .pill_title {
+    font-size: $font-size_extra-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $transition_link;
+  }
+
+  .home_title {
+    text-shadow: $text-shadow_display;
+    font-size: 80px;
+  }
+}
+
+.content_block {
+  transition: box-shadow $speed_quick ease;
+  display: block;
+
+  // &:hover, &:focus {
+  //   box-shadow: inset 0 9999px 0 0 transparentize($color_blue-light, .5);
+  //   border-bottom: none;
+  //
+  //   & .pill_title {
+  //     // border-color: $color_blue-light;
+  //   }
+  // }
+}
+
+.pill_title {
+  font-size: $font-size_medium;
+  background: #fff;
+  border: 4px solid $color_blue-dark;
+  padding: 20px 40px;
+  box-shadow: $box-shadow_pill;
+  border-radius: 100px;
+  display: inline-block;
+  color: $color_blue-dark;
+}
+
+.breadcrumbs {
+  margin: 50px 20px;
+  font-size: $font-size_medium;
+
+  h1 {
+    font-size: inherit;
+    display: inline;
+  }
+}
+
+.text_header {
+  font-size: $font-size_extra-large;
+  margin: 50px 20px;
+}
+
+.project {
+  background:
+    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, $color_red-theme-light 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+    radial-gradient(at 100% 100%,      #fff 9px, $color_red-theme-light 10px, #fff 11px),
+    $color_red-theme-light;
+  background-size: 20px 20px;
+
+  margin: 0 $margin_theme $margin_theme $margin_theme;
+  padding: 40px;
+
+  .project_title {
+  }
+
+  .project_description {
+    margin: -30px auto 0 auto;
+    color: #fff;
+    background-color: $color_blue-dark;
+    font-family: $font-family_serif;
+    font-size: $font-size_small;
+    text-align: left;
+    line-height: $font-size_small * 1.6;
+
+    padding: 40px;
+    width: 600px;
+
+    a.call-to-action {
+      color: #fff;
+      margin-top: 20px;
+      display: block;
+      font-size: $font-size_medium;
+      padding: 10px 30px;
+      border-radius: 50px;
+      border: 4px solid rgba(255,255,255,.5);
+      text-align: center;
+
+      &:hover {
+        border: 4px solid rgba(255,255,255,1);
+      }
+    }
+  }
+}
+
+.footnote {
+  font-style: italic;
+
+  &:before {
+    content: '* ';
+    margin-left: -12px;
+  }
+}
+
+
+// MEDIA QUERIES
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+  .project {
+    .project_description {
+      padding: 40px;
+      width: 900px;
+    }
+  }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .project {
+    .project_description {
+      padding: 40px;
+      width: 600px;
+    }
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .project {
+    .project_description {
+      padding: 30px;
+      width: 500px;
+    }
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .project {
+    .project_description {
+      padding: 30px;
+      width: 500px;
+    }
+  }
+
+  .container_home {
+    .home_title {
+      font-size: 60px;
+    }
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .text_header {
+    font-size: $font-size_large;
+  }
+
+  .project {
+    padding: 20px;
+
+    .project_description {
+      padding: 20px;
+      width: 400px;
+    }
+  }
+
+  .pill_title {
+    font-size: $font-size_medium;
+  }
+
+  #link_email,
+  #link_maxfun {
+    display: none;
+  }
+
+  #link_apply,
+  #link_discuss,
+  #link_about {
+    font-size: $font-size_medium;
+    margin-right: 20px;
+  }
+
+  .container_home {
+    .home_title {
+      font-size: 40px;
+    }
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .text_header {
+    font-size: $font-size_large;
+  }
+
+  .project {
+    padding: 20px;
+
+    .project_description {
+      padding: 10px;
+      width: 300px;
+    }
+  }
+
+  .pill_title {
+    font-size: $font-size_small;
+  }
+
+  #link_email,
+  #link_maxfun {
+    display: none;
+  }
+
+  #link_apply,
+  #link_discuss,
+  #link_about {
+    font-size: $font-size_small;
+    margin-right: 5px;
+  }
+
+  .container_home {
+    .home_title {
+      font-size: 30px;
+    }
+  }
+}

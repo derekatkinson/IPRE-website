@@ -1,0 +1,12 @@
+<nav class="nav_main">
+  <a href="/" class="logo"><img src="{{site.baseurl}}/assets/IPRE-logo-transparent.png" width="60" height="60"></a>
+  <div class="right secondary">
+    <a href="mailto:davenport@ipre.space" id="link_email"><img src="{{site.baseurl}}/assets/email.svg"></a>
+    <a href="https://www.maximumfun.org/shows/adventure-zone" id="link_maxfun"><img src="{{site.baseurl}}/assets/maxfun.svg"></a>
+  </div>
+  <div class="right primary">
+    <a href="{{site.baseurl}}/apply" {% if page.permalink == "apply/" %}class="active"{% endif %} id="link_apply">Apply</a>
+    <a href="{{site.baseurl}}/discuss" {% if page.permalink == "discuss/" %}class="active"{% endif %} id="link_discuss">Discuss</a>
+    <a href="{{site.baseurl}}/about" {% if page.permalink == "about/" %}class="active"{% endif %} id="link_about">About</a>
+  </div>
+</nav>
